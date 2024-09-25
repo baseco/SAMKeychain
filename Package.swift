@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SSKeychain",
+    name: "SAMKeychain",
     platforms: [
         .iOS(.v8),          // SPM requires a minimum of iOS 8.0
         .macOS(.v10_10),    // SPM requires a minimum of macOS 10.10
@@ -12,8 +12,8 @@ let package = Package(
     products: [
         // Defines the SAMKeychain library that other packages can depend on
         .library(
-            name: "SSKeychain",
-            targets: ["SSKeychain"]
+            name: "SAMKeychain",
+            targets: ["SAMKeychain"]
         )
     ],
     dependencies: [
