@@ -200,4 +200,10 @@ extern NSString *const kSAMKeychainWhereKey;
 
 NS_ASSUME_NONNULL_END
 
+#ifdef SWIFTPM
+#import "SAMKeychainQuery.h"
+
+#else
 #import <SAMKeychain/SAMKeychainQuery.h>
+
+#endif

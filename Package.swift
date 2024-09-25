@@ -23,11 +23,17 @@ let package = Package(
         .target(
             name: "SAMKeychain",
             path: "Sources",
-            sources: ["*.{h,m}"],
+                exclude: ["SAMKeychain.h"],
+
             resources: [
-                .process("../Support/SAMKeychain.bundle")
+                .process("Support/SAMKeychain.bundle")
             ],
             publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath("."),
+                .define("SWIFTPM", to: "1"), // Define SWIFTPM=1
+
+            ],
             linkerSettings: [
                 .linkedFramework("Security"),
                 .linkedFramework("Foundation")
